@@ -36,22 +36,15 @@ function compChoice() {
   }
 }
 
-function playerScoreUpdate() {
-  playerScore++;
-  playerScoreBox.textContent = playerScore;
-}
-function compScoreUpdate() {
-  compScore++;
-  compScoreBox.textContent = playerScore;
-}
-
 rockBtn.onclick = () => {
   compChoice();
   playerImg.setAttribute("src", "assets/rock-hand.png");
   if (choice === 3) {
-    playerScoreUpdate();
+    playerScore++;
+    playerScoreBox.textContent = playerScore;
   } else if (choice === 2) {
-    compScoreUpdate();
+    compScore++;
+    compScoreBox.textContent = compScore;
   }
   gameOver();
 };
@@ -60,9 +53,11 @@ paperBtn.onclick = () => {
   compChoice();
   playerImg.setAttribute("src", "assets/paper-hand.png");
   if (choice === 1) {
-    playerScoreUpdate();
+    playerScore++;
+    playerScoreBox.textContent = playerScore;
   } else if (choice === 3) {
-    compScoreUpdate();
+    compScore++;
+    compScoreBox.textContent = compScore;
   }
   gameOver();
 };
@@ -71,9 +66,11 @@ scissorsBtn.onclick = () => {
   compChoice();
   playerImg.setAttribute("src", "assets/scissors-hand.png");
   if (choice === 2) {
-    playerScoreUpdate();
+    playerScore++;
+    playerScoreBox.textContent = playerScore;
   } else if (choice === 1) {
-    compScoreUpdate();
+    compScore++;
+    compScoreBox.textContent = compScore;
   }
   gameOver();
 };
@@ -92,8 +89,8 @@ function gameOver() {
   }
 }
 
-let playAgain = document.getElementById("playAgainBtn");
+let playAgain=document.getElementById("playAgainBtn")
 
-playAgain.onclick = () => {
-  window.location.href = "./game.html";
-};
+playAgain.onclick=()=>{
+    window.location.href="./game.html"
+}
